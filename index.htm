@@ -79,7 +79,7 @@
         <option value="1">1</option>
       </select>
 
-      <label for="gate">Select Logic Gate:</label>
+      <label for="gate">Pilih logic gate yang kamu mau:</label>
       <select id="gate">
         <option value="AND">AND</option>
         <option value="OR">OR</option>
@@ -93,7 +93,10 @@
       <label for="result">Result:</label>
       <input type="text" id="result" readonly />
 
-      <button onclick="calculate()">Calculate</button>
+      <button onclick="calculate()">Eksekusi</button>
+      <h4>RED: 0 false <br>
+          GREEN: 1 true 
+      </h4>
     </div>
 
     <div class="canvas-container">
@@ -102,6 +105,7 @@
 
     <script>
       function calculate() {
+        //variabel untuk script di canvas
         const input1 = parseInt(document.getElementById("input1").value);
         const input2 = parseInt(document.getElementById("input2").value);
         const gate = document.getElementById("gate").value;
@@ -139,6 +143,7 @@
         }
 
         resultField.value = result ? 1 : 0;
+        //script untuk kanvas di bawah
 
         // Visualisasi rangkaian logika
         ctx.clearRect(0, 0, canvas.width, canvas.height);
